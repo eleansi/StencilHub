@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/designsystemasml.esm.js"></script>
+    <script nomodule src="/build/designs  ystemasml.js"></script>
+    <link rel="stylesheet" href="/build/designsystemasml.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,100;1,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-container light-theme">
+      <!-- <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component> -->
+      <container-tag>
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+      </container-tag>
+      <container-tag>
+        <!-- <h1>Primary Button</h1> -->
+        <primary-button type="primary">
+          Click Here
+        </primary-button>
+        <!-- <h1>Secondary Button</h1> -->
+        <primary-button type="secondary">
+          Click Here
+        </primary-button>
+        <primary-button type="tertiary">
+          Click Here
+        </primary-button>
+      </container-tag>
+    </div>
+    <script>
+      
+      // let lighTheme = document.querySelector(".trigger-light-theme");
+      // let darkTheme = document.querySelector(".trigger-dark-theme");
+      // SWITCHER
+      const toggleSwitch = document.querySelector(
+        '.theme-switch input[type="checkbox"]'
+      );
+      const currentTheme = localStorage.getItem("theme");
+
+      if (currentTheme) {
+        document.documentElement.setAttribute("data-theme", currentTheme);
+
+        if (currentTheme === "dark") {
+          toggleSwitch.checked = true;
+        }
+      }
+
+      function switchTheme(e) {
+        if (e.target.checked) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      function setTheme() {
+        const bodySelector = document.querySelector(".app-container");
+        const theme = localStorage.getItem("theme");
+
+        if (theme === "light") {
+          bodySelector.classList = "app-container light-theme";
+        } else {
+          bodySelector.classList = "app-container dark-theme";
+        }
+      }
+
+      toggleSwitch.addEventListener("change", (e) => {
+        switchTheme(e);
+        setTheme();
+      }, false);
+    </script>
+  </body>
+</html>

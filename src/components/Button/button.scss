@@ -1,0 +1,81 @@
+:host-context(.light-theme) {
+  --primary-button-background-color: var(--primary-btn-color-lt);
+  --primary-button-text-color: var(--primary-btn-text-color-lt);
+  --secondary-button-background-color: var(--secondary-btn-color-lt);
+  --secondary-button-text-color: var(--secondary-btn-text-color-lt);
+  --primary-gradient: var(--primary-gradient-lt);
+  --tertiary-btn-text-color: var(--tertiary-btn-text-color-lt);
+}
+
+:host-context(.dark-theme) {
+  --primary-button-background-color: var(--primary-btn-color-dt);
+  --primary-button-text-color: var(--primary-text-color-dt);
+  --secondary-button-background-color: var(--secondary-btn-color-dt);
+  --secondary-button-text-color: var(--secondary-text-color-dt);
+  --primary-gradient: var(--primary-gradient-dt);
+  --tertiary-btn-text-color: var(--tertiary-btn-text-color-dt);
+}
+
+.primary {
+  background-color: var(--primary-button-background-color);
+  color: var(--primary-button-text-color);
+  font-weight: bold;
+  border: 0px solid transparent;
+  padding: 12px 24px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 1em;
+  // border-color: transparent;
+  background-clip: padding-box;
+  font-family: var(--default-font);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 1rem;
+  &:hover {
+      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.secondary {
+    // background-color: var(--button-background-color);
+    background: transparent;
+    color: var(--secondary-button-text-color);
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1em;
+    border: 2px solid var(--secondary-button-background-color);
+    // box-shadow: inset 0 0 10px var(--secondary-button-background-color);
+    // box-shadow: inset 2px solid var(--secondary-button-background-color);
+    // border-color: transparent;
+    font-family: var(--default-font);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-clip: padding-box;
+    margin: 1rem;
+    &:hover {
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.tertiary {
+    background: var(--primary-gradient);
+    color: var(--tertiary-btn-text-color);
+    // border-color: var(--primary-gradient); 
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 50px;
+    outline: none;
+    font-size: 1em;
+    border: 0px solid transparent;
+    // border-color: transparent;
+    font-family: var(--default-font);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-clip: padding-box;
+    margin: 1rem;
+    &:hover {
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    }
+}
